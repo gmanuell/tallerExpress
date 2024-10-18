@@ -1,5 +1,5 @@
-import { response, Router } from "express";
-import Tienda from "../models/Tienda";
+import { Router } from "express";
+import Tienda from "../models/Tienda.js";
 
 const router = Router()
 
@@ -17,3 +17,5 @@ router.get('/all',
         }
     }
 )
+
+export default router
