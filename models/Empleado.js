@@ -3,9 +3,9 @@ import {Schema,model} from "mongoose";
 
 let collection = 'empleados'
 let schema = new Schema({
-    Nombre: {type:String,require:true},
-    Cargo: {type:String,require:true},
-    Salario: {type:Number,require:true},
+    Nombre: {type:String,required:true},
+    Cargo: {type:String,required:true},
+    Salario: {type:Number,required:true},
 },{
     timestamps:true
 })

@@ -4,7 +4,7 @@ import "./config/database.js"
 import cors from 'cors'
 import morgan from "morgan"
 import indexRouter from './router/index.js'
-
+import not_found_handler from "./Middlewares/not_found_handler.js"
 
 const server = express()
 
@@ -18,9 +18,7 @@ server.use(cors())  //permite trabajar con cors
 server.use(morgan('dev'))
 
 server.use('/api',indexRouter)
+server.use(not_found_handler)
 
-server.get('/',(req,res)=>{
-    res.send
-})
 
 server.listen(PORT, ready);

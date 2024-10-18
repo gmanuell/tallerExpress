@@ -1,21 +1,13 @@
 import { Router } from "express";
-import Tienda from "../models/Empleado.js";
+import {allEmpleados,nombreEmpleados,cargoEmpleados} from "../controllers/empleados/read.js";
+import { create,manyCreate } from "../controllers/empleados/create.js";
 
 const router = Router()
 
-router.get('/all',
-    async (req,res) => {
-        try {
-            let all = await Tienda.find()
-            return res.status(200).json({
-                response: all
-            })
-        } catch (error) {
-            return response.status(500).json({
-                response: error
-            })
-        }
-    }
-)
+router.get('/all', allEmpleados)
+router.get('/nombre', nombreEmpleados)
+router.get('/cargo/:y', cargoEmpleados)
+router.post('/create', create)
+router.post('/manycreate', manyCreate)
 
 export default router

@@ -11,4 +11,5 @@ router.use('/tiendas', tiendaRouter)
 router.use('/productos', productoRouter)
 router.use('/empleados', empleadoRouter)
 
+
 export default router

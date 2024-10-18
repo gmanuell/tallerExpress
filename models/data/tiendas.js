@@ -7,28 +7,28 @@ import Tienda from '../Tienda.js'
 const tiendas = [
     {
       Nombre: "Tienda Uno",
-      Dirección: "Calle Principal 123",
-      Teléfono: 1234567890
+      Direccion: "Calle Principal 123",
+      Telefono: 1234567890
     },
     {
       Nombre: "Tienda Dos",
-      Dirección: "Avenida Central 456",
-      Teléfono: 9876543210
+      Direccion: "Avenida Central 456",
+      Telefono: 9876543210
     },
     {
       Nombre: "Tienda Tres",
-      Dirección: "Calle Secundaria 789",
-      Teléfono: 1122334455
+      Direccion: "Calle Secundaria 789",
+      Telefono: 1122334455
     },
     {
       Nombre: "Tienda Cuatro",
-      Dirección: "Boulevard Norte 101",
-      Teléfono: 9988776655
+      Direccion: "Boulevard Norte 101",
+      Telefono: 9988776655
     },
     {
       Nombre: "Tienda Cinco",
-      Dirección: "Avenida Sur 202",
-      Teléfono: 6677889900
+      Direccion: "Avenida Sur 202",
+      Telefono: 6677889900
     }
   ];
 
