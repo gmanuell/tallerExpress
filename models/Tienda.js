@@ -1,7 +1,7 @@
 import {Schema,model} from "mongoose";
 
 
-let collection = 'users'
+let collection = 'tiendas'
 let schema = new Schema({
     Nombre: {type:String,require:true},
     Dirección: {type:String,require:true},
@@ -10,5 +10,5 @@ let schema = new Schema({
     timestamps:true
 })
 
-let User = model(collection,schema)
-export default User
+let Tienda = model(collection,schema)
+export default Tienda

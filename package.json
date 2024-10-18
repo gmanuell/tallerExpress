@@ -6,7 +6,10 @@
   "type": "module",
   "scripts": {
     "start": "node ./server.js",
-    "dev": "nodemon ./server.js"
+    "dev": "nodemon ./server.js",
+    "dataTiendas": "node ./models/data/tiendas.js",
+    "dataEmpleados": "node ./models/data/empleados.js",
+    "dataProductos": "node ./models/data/productos.js"
 
   },
   "keywords": [],
