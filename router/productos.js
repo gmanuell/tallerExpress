@@ -6,7 +6,7 @@ const router = Router()
 
 router.get('/all', allProductos)
 router.get('/nombre', nombreProductos)
-router.get('/tipo/:x', tipoProductos)
+router.get('/tipo/:tipo', tipoProductos)
 router.post('/create', create)
 router.post('/manycreate', manyCreate)
 

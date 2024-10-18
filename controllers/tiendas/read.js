@@ -1,20 +1,19 @@
 import Tienda from "../../models/Tienda.js";
 
-let allTiendas = async (req,res) => {
+let allTiendas = async (req,res,next) => {
     try {
         let all = await Tienda.find()
         return res.status(200).json({
             response: all
         })
     } catch (error) {
-        return response.status(500).json({
-            response: error
-        })
+        next(error)
+
     }
 }
 
 
-let nombreTiendas = async (req,res) => {
+let nombreTiendas = async (req,res,next) => {
     try {
         let nombreQuery = req.params.nombre
         let all = await Tienda.find({nombre:nombreQuery}); 
@@ -22,13 +21,12 @@ let nombreTiendas = async (req,res) => {
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
+
     } 
 }
 
-let direccionTiendas = async (req, res) => {
+let direccionTiendas = async (req, res,next) => {
     try {
         let direccionQuery = req.params.direccion;
         let all = await Tienda.find({ direccion:direccionQuery}); 
@@ -36,9 +34,8 @@ let direccionTiendas = async (req, res) => {
             response: all
         });
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
+        next(error)
+
     }
 }
 

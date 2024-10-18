@@ -1,6 +1,6 @@
 import Empleado from "../../models/Empleado.js";
 
-let create = async (req,res) =>{
+let create = async (req,res,next) =>{
     try {
         let empleado = req.body
         let all = await Empleado.create(empleado)
@@ -8,13 +8,11 @@ let create = async (req,res) =>{
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+       next(error)
     }
 } 
 
-let manyCreate = async (req,res) =>{
+let manyCreate = async (req,res,next) =>{
     try {
         let empleado = req.body
         let all = await Empleado.insertMany(empleado)
@@ -22,9 +20,7 @@ let manyCreate = async (req,res) =>{
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
     }
 } 
 

@@ -1,20 +1,19 @@
 import Empleado from "../../models/Empleado.js";
 
-let allEmpleados = async (req,res) => {
+let allEmpleados = async (req,res,next) => {
     try {
         let all = await Empleado.find()
         return res.status(200).json({
             response: all
         })
     } catch (error) {
-        return response.status(500).json({
-            response: error
-        })
+        next(error)
+
     }
 }
 
 
-let nombreEmpleados = async (req,res) => {
+let nombreEmpleados = async (req,res,next) => {
     try {
         let nombreQuery = req.params.nombre
         let all = await Empleado.find({nombre:nombreQuery}); 
@@ -22,13 +21,12 @@ let nombreEmpleados = async (req,res) => {
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
+
     } 
 }
 
-let cargoEmpleados = async (req, res) => {
+let cargoEmpleados = async (req, res,next) => {
     try {
         let cargoQuery = req.params.y;
         let all = await Empleado.find({cargo:cargoQuery }); 
@@ -36,9 +34,8 @@ let cargoEmpleados = async (req, res) => {
             response: all
         });
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        });
+        next(error)
+
     }
 }
 

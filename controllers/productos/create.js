@@ -1,7 +1,7 @@
 import Producto from "../../models/Producto.js";
 
 
-let create = async (req,res) =>{
+let create = async (req,res,next) =>{
     try {
         let producto = req.body
         let all = await Producto.create(producto)
@@ -9,13 +9,12 @@ let create = async (req,res) =>{
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
+
     }
 } 
 
-let manyCreate = async (req,res) =>{
+let manyCreate = async (req,res,next) =>{
     try {
         let producto = req.body
         let all = await Producto.insertMany(producto)
@@ -23,9 +22,8 @@ let manyCreate = async (req,res) =>{
             response: all
         })
     } catch (error) {
-        return res.status(500).json({
-            response: error
-        })
+        next(error)
+
     }
 } 
 
