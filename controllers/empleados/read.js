@@ -16,7 +16,7 @@ let allEmpleados = async (req,res,next) => {
 let nombreEmpleados = async (req,res,next) => {
     try {
         let nombreQuery = req.params.nombre
-        let all = await Empleado.find({nombre:nombreQuery}); 
+        let all = await Empleado.find({Nombre:nombreQuery}); 
         return res.status(200).json({
             response: all
         })
@@ -29,7 +29,7 @@ let nombreEmpleados = async (req,res,next) => {
 let cargoEmpleados = async (req, res,next) => {
     try {
         let cargoQuery = req.params.y;
-        let all = await Empleado.find({cargo:cargoQuery }); 
+        let all = await Empleado.find({Cargo:cargoQuery }); 
         return res.status(200).json({
             response: all
         });

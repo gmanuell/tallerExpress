@@ -16,7 +16,7 @@ let allTiendas = async (req,res,next) => {
 let nombreTiendas = async (req,res,next) => {
     try {
         let nombreQuery = req.params.nombre
-        let all = await Tienda.find({nombre:nombreQuery}); 
+        let all = await Tienda.find({Nombre:nombreQuery}); 
         return res.status(200).json({
             response: all
         })
@@ -29,7 +29,7 @@ let nombreTiendas = async (req,res,next) => {
 let direccionTiendas = async (req, res,next) => {
     try {
         let direccionQuery = req.params.direccion;
-        let all = await Tienda.find({ direccion:direccionQuery}); 
+        let all = await Tienda.find({ Direccion:direccionQuery}); 
         return res.status(200).json({
             response: all
         });

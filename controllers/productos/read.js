@@ -14,7 +14,7 @@ let allProductos = async (req,res,next) => {
 let nombreProductos = async (req,res,next) => {
     try {
         let nombreQuery = req.params.nombre
-        let all = await Producto.find({nombre:nombreQuery}); 
+        let all = await Producto.find({Nombre:nombreQuery}); 
         return res.status(200).json({
             response: all
         })
@@ -27,7 +27,9 @@ let nombreProductos = async (req,res,next) => {
 let tipoProductos= async (req, res,next) => {
     try {
         let tipoQuery = req.params.tipo;
-        let all = await Producto.find({ tipo:tipoQuery}); 
+        console.log(tipoQuery);
+        
+        let all = await Producto.find({ Tipo:tipoQuery})
         return res.status(200).json({
             response: all
         });
